@@ -8,14 +8,13 @@
 		$stateProvider
 			.state('taskTimer', {
 				url: '/',
-				controller: 'MainCtrl as main',
+				controller: 'MainCtrl as Main',
 				templateUrl: 'templates/home.html'
 			});
 
 	}
 
 	angular
-		.module('chatRoom', ['ui.router'])
+		.module('chatRoom', ['ui.router', 'firebase'])
 		.config(config);
 })();
-  
