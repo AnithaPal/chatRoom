@@ -4,6 +4,10 @@
 
     ctrl.rooms = RoomService.bind();
 
+    ctrl.addRoom = function(room){
+      RoomService.addRoom(room);
+    }
+
   };
 
   angular
