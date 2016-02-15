@@ -1,10 +1,13 @@
 (function(){
-  function MainCtrl(){
+  function MainCtrl(RoomService){
+    var ctrl = this;
+
+    ctrl.rooms = RoomService.bind();
 
   };
 
   angular
     .module("chatRoom")
-    .controller("MainCtrl", [MainCtrl]);
+    .controller("MainCtrl", ['RoomService', MainCtrl]);
 
 })();
