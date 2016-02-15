@@ -1,0 +1,15 @@
+<form ng-submit="modalInstance.addRoom()">
+  <div class="modal-header">
+    <h3 class="modal-title">Create new room</h3>
+  </div>
+  <div class="modal-body">
+      <div class="form-group">
+        <label for="createChatRoom">Enter a room name</label>
+        <input ng-model="room.name" type="text" class="form-control input-lg" id="chatRoomNameInput">
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button ng-click="modalInstance.cancel()" class="btn btn-warning">Cancel</button>
+    <button ng-click="modalInstance.createRoom()" type="submit" class="btn btn-primary">Create Room</button>
+  </div>
+</form>
