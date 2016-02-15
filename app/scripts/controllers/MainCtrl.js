@@ -5,6 +5,6 @@
 
   angular
     .module("chatRoom")
-    .controller("Mainctrl", [Mainctrl]);
+    .controller("MainCtrl", [MainCtrl]);
 
 })();
