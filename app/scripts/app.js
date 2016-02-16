@@ -6,15 +6,15 @@
 			requireBase: false
 		});
 		$stateProvider
-			.state('taskTimer', {
+			.state('MainCtrl', {
 				url: '/',
 				controller: 'MainCtrl as Main',
 				templateUrl: 'templates/home.html'
 			})
 			.state('ModalInstanceCtrl', {
 				url: '/',
-				controller: 'ModalInstanceCtrl as modalInstance',
-				templateUrl: 'templates/modal_Instance.html'
+				controller: 'ModalInstanceCtrl as Modal',
+				templateUrl: 'templates/modal_instance.html'
 			})
 
 	}
