@@ -8,11 +8,14 @@
       <br>
       <div>
         <ul ng-repeat="room in Main.rooms">
-            <li> {{ room.name }}  </li>
+            <li> <a ng-click="Main.setRoom(room)">{{room.name}}</a> </li>
         </ul>
     </div>
     </aside>
     <section class="col-sm-9 col-xs-12 no-float ">
+      <h1 class="text-center"> Messages </h1>
+      <p class="lead text-center"> {{ roomTitle}} </p>
+      <p ng-repeat="message in messages"> {{message.userName}}: {{message.content}}</p>
     </section>
   </div>
 </main>
