@@ -1,24 +1,24 @@
 (function(){
-  function ModalInstanceCtrl($uibModalInstance, RoomService){
+  function ModalInstanceCtrl($uibModalInstance, RoomService, $scope){
 
-    var ModalCtrl = this;
+    var mi = this;
 
-    ModalCtrl.addRoom = function(){
+    mi.addRoom = function(room){
       RoomService.addRoom(room);
-    }
+    };
 
-    ModalCtrl.createRoom = function(){
+    $scope.createRoom = function(){
+       mi.addRoom($scope.room);
        $uibModalInstance.close();
-    }
+    };
 
-    ModalCtrl.cancel = function(){
+    $scope.cancel = function(){
       $uibModalInstance.dismiss('cancel');
-    }
-
-  };
+    };
+  }
 
   angular
     .module('chatRoom')
-    .controller('ModalInstanceCtrl', ['$uibModalInstance', 'RoomService',ModalInstanceCtrl])
+    .controller('ModalInstanceCtrl', ['$uibModalInstance', 'RoomService', '$scope', ModalInstanceCtrl])
 
 })();
