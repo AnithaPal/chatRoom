@@ -1,12 +1,16 @@
 <main class="container-fluid">
   <div class="row-fluid">
     <aside class="col-sm-3 col-xs-12 no-float ">
-      <h1 class="text-center"> Task History</h1>
-      <table>
-        <tr ng-repeat="room in Main.rooms">
-          <td> {{ room.name }}  </td>
-        </tr>
-      </table>
+      <h1 class="text-center"> Chat Rooms</h1>
+      <div>
+        <button ng-click="Main.open()" class="btn btn-primary">New Room Modal</button>
+      </div>
+      <br>
+      <div>
+        <ul ng-repeat="room in Main.rooms">
+            <li> {{ room.name }}  </li>
+        </ul>
+    </div>
     </aside>
     <section class="col-sm-9 col-xs-12 no-float ">
     </section>

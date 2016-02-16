@@ -6,15 +6,20 @@
 			requireBase: false
 		});
 		$stateProvider
-			.state('taskTimer', {
+			.state('MainCtrl', {
 				url: '/',
 				controller: 'MainCtrl as Main',
 				templateUrl: 'templates/home.html'
-			});
+			})
+			.state('ModalInstanceCtrl', {
+				url: '/',
+				controller: 'ModalInstanceCtrl as Modal',
+				templateUrl: 'templates/modal_instance.html'
+			})
 
 	}
 
 	angular
-		.module('chatRoom', ['ui.router', 'firebase'])
+		.module('chatRoom', ['ui.router', 'firebase', 'ui.bootstrap'])
 		.config(config);
 })();
