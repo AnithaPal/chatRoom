@@ -20,6 +20,6 @@
 	}
 
 	angular
-		.module('chatRoom', ['ui.router', 'firebase', 'ui.bootstrap'])
+		.module('chatRoom', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
 		.config(config);
 })();

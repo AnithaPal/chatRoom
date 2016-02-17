@@ -6,7 +6,7 @@
     var messages = $firebaseArray(firebaseRef.child('messages'));
 
     MessageService.sendMessage = function(message){
-      messages.$add({userName: message.userName,
+      messages.$add({userName: $cookies.chatRoomCurrentUser,
                   content: message.content,
                   sentAt: Firebase.ServerValue.TIMESTAMP,
                   roomId: room
