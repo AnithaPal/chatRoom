@@ -8,11 +8,15 @@
   <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
 </head>
 <body>
-  <header class="text-center">
-     <h1> ChatRoom
+  <header class="text-center container-fluid col-xs-12">
+     <h1> Chat Room </h1>
   </header>
-  <ui-view> </ui-view>
-  <footer>  Copyright © Anitha Palanisamy </footer>
+  <main class = "main-content container-fluid col-xs-12">
+    <ui-view> </ui-view>
+  </main>
+  <footer class="container-fluid footer navbar-fixed-bottom col-xs-12">
+    Copyright © Anitha Palanisamy
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>

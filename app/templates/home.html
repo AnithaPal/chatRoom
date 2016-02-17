@@ -1,9 +1,10 @@
-<main class="container-fluid">
+<div class="home-content ">
   <div class="row-fluid">
-    <aside class="col-sm-3 col-xs-12 no-float ">
-      <h1 class="text-center"> Chat Rooms</h1>
+
+    <aside class="col-sm-3 col-xs-12">
+      <h2 class="text-center"> Chat Rooms</h2>
       <div>
-        <button ng-click="Main.open()" class="btn btn-primary text-center">New Room Modal</button>
+        <button ng-click="Main.open()" class="btn btn-primary text-center">New Room</button>
       </div>
       <br>
       <div>
@@ -11,17 +12,17 @@
           <tr ng-repeat="room in Main.rooms">
             <td ng-click="Main.setRoom(room)">  {{room.name}} </td>
             <td>
-						<span class="glyphicon glyphicon-remove btn btn-sm" ng-click="Main.deleteRoom(room)" type="button"></span>
-					</td>
+              <span class="glyphicon glyphicon-remove btn btn-sm" ng-click="Main.deleteRoom(room)" type="button"></span>
+            </td>
           </tr>
         </table>
       </div>
     </aside>
-    <section class="col-sm-9 col-xs-12 no-float content">
-      <h1 class="text-center"> Messages </h1>
+
+    <section class="col-sm-9 col-xs-12">
+      <h2 class="text-center"> Messages </h2>
       <p class="lead text-center"> {{ roomTitle}} </p>
-      <p ng-repeat="message in messages"> {{message.userName}}: {{message.content}}</p>
-      <div class="footer">
+      <div>
         <form>
           <div class = "input-group">
             <input type = "text" class = "form-control" placeholder="Enter your message" ng-model="message.content">
@@ -33,6 +34,10 @@
           </div>
         </form>
       </div>
+      <div>
+        <p ng-repeat="message in messages"> <strong> {{message.userName}}: </strong> {{message.content}} </p>
+      </div>
     </section>
+
   </div>
-</main>
+</div>
