@@ -13,6 +13,11 @@
                   created_at: Firebase.ServerValue.TIMESTAMP})
     };
 
+    RoomService.delete = function(roomID){
+      rooms.$remove(roomID);
+    }
+    
+
     RoomService.getMessages = function(roomId, callback){
       messageRef.orderByChild('roomId').equalTo(roomId).on('value', function(messages) {
         callback(messages.val());
