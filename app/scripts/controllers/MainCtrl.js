@@ -1,5 +1,5 @@
 (function(){
-  function MainCtrl($uibModal, RoomService, MessageService, $scope){
+  function MainCtrl($uibModal, RoomService, MessageService, $scope, $cookies){
     var ctrl = this;
     var roomId ;
 
@@ -27,21 +27,17 @@
       });
 
     };
-console.log(roomId );
-    // ctrl.createMessage = function(){
-    //   MessageService.addRoom(ctrl.message);
-    // }
 
     ctrl.sendMessage = function(message){
       console.log(message.content);
       console.log($scope.roomId );
-      console.log("inside send message");
+      console.log($cookies);
+      message.userName = $cookies.get('chatRoomCurrentUser');
+      message.roomId = $scope.roomId;
       MessageService.sendMessage(message);
     }
 
   ctrl.deleteRoom = function(room){
-    console.log(room);
-    console.log("inside delete");
     RoomService.delete(room);
   }
 
@@ -49,6 +45,6 @@ console.log(roomId );
 
   angular
     .module('chatRoom')
-    .controller('MainCtrl', ['$uibModal', 'RoomService','MessageService', '$scope', MainCtrl]);
+    .controller('MainCtrl', ['$uibModal', 'RoomService','MessageService', '$scope', '$cookies', MainCtrl]);
 
 })();
