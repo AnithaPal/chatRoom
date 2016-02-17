@@ -1,16 +1,12 @@
 (function(){
   function LoginCtrl($scope, $cookies, $uibModalInstance){
-    // var lc = this;
-    // lc.closeModalInstance = function(){
-    //   modalInstance.close('exit');
-    // };
-
     $scope.createUserName = function(userName){
       if(userName && userName !== ''){
-        $cookies.chatRoomCurrentUser = userName;
-        // closeModalInstance($uibModalInstance);
+        // $cookies.chatRoomCurrentUser = userName;
+        var expireTime = new Date();
+        expireTime.setHours(expireTime.getHours() + 1);
+        $cookies.put("chatRoomCurrentUser", userName, {'expires': expireTime});
         $uibModalInstance.close();
-        console.log("inside create user name");
       }
       else{
          $scope.errorMessage = 'Invalid username.';
