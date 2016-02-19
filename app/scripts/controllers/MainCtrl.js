@@ -1,9 +1,19 @@
 (function(){
   function MainCtrl($uibModal, RoomService, MessageService, $scope, $cookies){
     var ctrl = this;
-    var roomId ;
 
     ctrl.rooms = RoomService.bind();
+
+    ctrl.rooms.$loaded().then(function(x) {
+      RoomService.bindLastTaskToValue(function(key, room){
+        ctrl.currentRoom = room;
+        $scope.roomId = key;
+
+        RoomService.getMessages(key, function (messages) {
+          $scope.messages = messages;
+        });
+      });
+    })
 
     ctrl.open = function () {
         $uibModal.open({
@@ -18,20 +28,16 @@
       };
 
     ctrl.setRoom = function(room){
-      $scope.roomTitle = room.name;
+      ctrl.currentRoom = room;
       RoomService.getMessages(room.$id, function (messages) {
         $scope.messages = messages;
         $scope.roomId = room.$id;
-        roomId = room.$id;
-        console.log(roomId );
       });
 
     };
 
+
     ctrl.sendMessage = function(message){
-      console.log(message.content);
-      console.log($scope.roomId );
-      console.log($cookies);
       message.userName = $cookies.get('chatRoomCurrentUser');
       message.roomId = $scope.roomId;
       MessageService.sendMessage(message);
