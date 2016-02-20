@@ -1,49 +1,89 @@
-html, body{
-  font-family: "Open Sans", sans-serif;
+.navbar{
+  background-color: #004f4f !important;
+  border: transparent !important;
+}
+
+.navbar-header-link h3 {
   color: white;
-  height: 100%;
-  min-height: 100%;
-  /*background: #008080;*/
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+  font-family: 'Droid Serif', serif;
+  font-size: 30px;
 }
 
-header{
-  /*background: #008080;*/
-  background: #FF0000;
-  height: 100px;
-  width: 100%;
+.navbar-default .navbar-nav>li>a {
+    color: white !important;
+  }
+.navbar-header-link:hover, .navbar-header-link:active, .navbar-header-link:visited {
+  text-decoration: none;
 }
 
-.main-content{
-  width: 100%;
-  height: 100%;
-  background: yellow;
+.navbar-header-link h3:hover {
+  text-decoration: none;
+  color: #D34747;
 }
 
-.home-content{
-
+.navbar-header-link h3:hover, .navbar-header-link h3:active, .navbar-header-link h3:visited {
+  text-decoration: none;
 }
 
-
-section{
-  background: #008080;
-  color: white;
-  margin-right: -10px;
-  height: 700px;
+html,body,.container
+{
+    height:100%;
+    background-color:#008080;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+    color: white;
 }
+
 
 aside{
-  background: #004f4f;
+  background: #008080;
   color: white;
-  padding-bottom: 100px;
-  margin-left: -15px;
-  height: 700px;
+  padding-bottom: 240px;
 }
 
+.input-group{
+  margin: 25px;
+}
+
+.row-fluid {
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+section{
+  color: white;
+  background: #008080;
+  padding-bottom: 100%;
+
+}
+.about-page{
+  margin-top: -20px;
+  background: #008080;
+  height: 100%;
+  color: white;
+  width:100%;
+
+  padding-bottom: 100%;
+}
+
+main{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.main-heading{
+  padding-top: 40px;
+}
+
+.new_room{
+  margin-left: 95px;
+  padding: 10px;
+}
 .room-list{
-  margin: 10px;
+  margin: 25px;
+  padding: 10px;
 }
 
 .loginheader{
@@ -51,9 +91,16 @@ aside{
   margin:10px;
 }
 
+.message-form{
+  margin-left: -40px;
+  position: absolute;
+  bottom: 0;
+}
+
 footer{
   width: 100%;
   text-align: center;
-  background: #FF0000;
+  background: #008080;
   color: white;
+  padding-bottom: 10px;
 }

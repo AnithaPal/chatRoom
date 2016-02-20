@@ -1,8 +1,8 @@
 
 <div class="row-fluid equal">
   <aside class="col-md-3">
-    <h3 class="text-left"> Chat Rooms</h3>
-    <div>
+    <h3 class="text-center"> Chat Rooms</h3>
+    <div class="new_room">
       <button ng-click="Main.open()" class="btn btn-primary text-center">New Room</button>
     </div>
     <br>
@@ -21,12 +21,12 @@
   <section class="col-md-9">
     <h2 class="text-center"> Messages </h2>
     <p class="lead text-center"> {{ Main.currentRoom.name}} </p>
-    <div class="chat-window">
+    <div>
       <div class="message-list">
         <p ng-repeat="message in messages"> <strong> {{message.userName}}: </strong> {{message.content}} </p>
       </div>
       <div>
-        <form class="col-md-8 col-md-offset-2 message-form">
+        <form class="col-md-8 message-form">
           <div class = "input-group">
             <input type = "text" class = "form-control " placeholder="Enter your message" ng-model="message.content">
             <span class = "input-group-btn">
