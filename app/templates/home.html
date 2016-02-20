@@ -1,21 +1,43 @@
-<main class="container-fluid">
-  <div class="row-fluid">
-    <aside class="col-sm-3 col-xs-12 no-float ">
-      <h1 class="text-center"> Chat Rooms</h1>
-      <div>
-        <button ng-click="Main.open()" class="btn btn-primary">New Room Modal</button>
-      </div>
-      <br>
-      <div>
-        <ul ng-repeat="room in Main.rooms">
-            <li> <a ng-click="Main.setRoom(room)">{{room.name}}</a> </li>
-        </ul>
+
+<div class="row-fluid equal">
+  <aside class="col-md-3">
+    <h3 class="text-center"> Chat Rooms</h3>
+    <div class="new_room">
+      <button ng-click="Main.open()" class="btn btn-primary text-center">New Room</button>
     </div>
-    </aside>
-    <section class="col-sm-9 col-xs-12 no-float ">
-      <h1 class="text-center"> Messages </h1>
-      <p class="lead text-center"> {{ roomTitle}} </p>
-      <p ng-repeat="message in messages"> {{message.userName}}: {{message.content}}</p>
-    </section>
-  </div>
-</main>
+    <br>
+    <div>
+      <table class="room-list">
+        <tr ng-repeat="room in Main.rooms">
+          <td ng-click="Main.setRoom(room)">  {{room.name}} </td>
+          <td>
+            <span class="glyphicon glyphicon-remove btn btn-sm" ng-click="Main.deleteRoom(room)" type="button"></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </aside>
+
+  <section class="col-md-9">
+    <h2 class="text-center"> Messages </h2>
+    <p class="lead text-center"> {{ Main.currentRoom.name}} </p>
+    <div>
+      <div class="message-list">
+        <p ng-repeat="message in messages"> <strong> {{message.userName}}: </strong> {{message.content}} </p>
+      </div>
+      <div>
+        <form class="col-md-8 message-form">
+          <div class = "input-group">
+            <input type = "text" class = "form-control " placeholder="Enter your message" ng-model="message.content">
+            <span class = "input-group-btn">
+              <button class = "btn btn-default" type = "button" ng-click="Main.sendMessage(message)">
+                Send
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>

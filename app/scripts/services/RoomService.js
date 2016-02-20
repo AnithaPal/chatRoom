@@ -13,11 +13,24 @@
                   created_at: Firebase.ServerValue.TIMESTAMP})
     };
 
+    RoomService.delete = function(roomID){
+      rooms.$remove(roomID);
+    }
+
+
     RoomService.getMessages = function(roomId, callback){
       messageRef.orderByChild('roomId').equalTo(roomId).on('value', function(messages) {
         callback(messages.val());
         });
     };
+
+    RoomService.bindLastTaskToValue = function(callback) {
+      roomRef.orderByChild("createdAt").limitToLast(1).once("value", function (snap) {
+        snap.forEach(function (room) {
+          callback(room.key(), room.val());
+				});
+			});
+		};
 
     RoomService.bind = function() {
       return rooms;

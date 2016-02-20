@@ -1,8 +1,106 @@
-ul{
-    list-style-type: none;
+.navbar{
+  background-color: #004f4f !important;
+  border: transparent !important;
+}
+
+.navbar-header-link h3 {
+  color: white;
+  font-family: 'Droid Serif', serif;
+  font-size: 30px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white !important;
+  }
+.navbar-header-link:hover, .navbar-header-link:active, .navbar-header-link:visited {
+  text-decoration: none;
+}
+
+.navbar-header-link h3:hover {
+  text-decoration: none;
+  color: #D34747;
+}
+
+.navbar-header-link h3:hover, .navbar-header-link h3:active, .navbar-header-link h3:visited {
+  text-decoration: none;
+}
+
+html,body,.container
+{
+    height:100%;
+    background-color:#008080;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+}
+
+
+aside{
+  background: #008080;
+  color: white;
+  padding-bottom: 240px;
+}
+
+.input-group{
+  margin: 25px;
+}
+
+.row-fluid {
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+section{
+  color: white;
+  background: #008080;
+  padding-bottom: 100%;
+
+}
+.about-page{
+  margin-top: -20px;
+  background: #008080;
+  height: 100%;
+  color: white;
+  width:100%;
+
+  padding-bottom: 100%;
+}
+
+main{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.main-heading{
+  padding-top: 40px;
+}
+
+.new_room{
+  margin-left: 95px;
+  padding: 10px;
+}
+.room-list{
+  margin: 25px;
+  padding: 10px;
 }
 
 .loginheader{
   padding: 5px;
   margin:10px;
+}
+
+.message-form{
+  margin-left: -40px;
+  position: absolute;
+  bottom: 0;
+}
+
+footer{
+  width: 100%;
+  text-align: center;
+  background: #008080;
+  color: white;
+  padding-bottom: 10px;
 }

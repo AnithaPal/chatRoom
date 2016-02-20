@@ -1,8 +1,7 @@
 (function() {
   function ChatRoomCookies($cookies, $uibModal) {
-    console.log($cookies.chatRoomCurrentUser);
-    if (!$cookies.chatRoomCurrentUser || $cookies.chatRoomCurrentUser === '') {
-      // Do something to allow users to set their username
+    var user = $cookies.get('chatRoomCurrentUser');
+    if (!user || user === '') {
       $uibModal.open({
         templateUrl: '/templates/login.html',
         controller: 'LoginCtrl',
