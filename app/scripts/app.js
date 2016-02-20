@@ -6,7 +6,7 @@
 			requireBase: false
 		});
 		$stateProvider
-			.state('MainCtrl', {
+			.state('Main', {
 				url: '/',
 				controller: 'MainCtrl as Main',
 				templateUrl: 'templates/home.html'
@@ -16,6 +16,11 @@
 				controller: 'ModalInstanceCtrl as Modal',
 				templateUrl: 'templates/modal_instance.html'
 			})
+			.state('about', {
+				url: '/about',
+				controller: 'MainCtrl as Main',
+				templateUrl: '/templates/about.html'
+			});
 
 	}
 

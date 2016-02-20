@@ -1,31 +1,34 @@
-<div class="home-content ">
-  <div class="row-fluid">
 
-    <aside class="col-sm-3 col-xs-12">
-      <h2 class="text-center"> Chat Rooms</h2>
-      <div>
-        <button ng-click="Main.open()" class="btn btn-primary text-center">New Room</button>
-      </div>
-      <br>
-      <div>
-        <table class="room-list">
-          <tr ng-repeat="room in Main.rooms">
-            <td ng-click="Main.setRoom(room)">  {{room.name}} </td>
-            <td>
-              <span class="glyphicon glyphicon-remove btn btn-sm" ng-click="Main.deleteRoom(room)" type="button"></span>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </aside>
+<div class="row-fluid equal">
+  <aside class="col-md-3">
+    <h3 class="text-left"> Chat Rooms</h3>
+    <div>
+      <button ng-click="Main.open()" class="btn btn-primary text-center">New Room</button>
+    </div>
+    <br>
+    <div>
+      <table class="room-list">
+        <tr ng-repeat="room in Main.rooms">
+          <td ng-click="Main.setRoom(room)">  {{room.name}} </td>
+          <td>
+            <span class="glyphicon glyphicon-remove btn btn-sm" ng-click="Main.deleteRoom(room)" type="button"></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </aside>
 
-    <section class="col-sm-9 col-xs-12">
-      <h2 class="text-center"> Messages </h2>
-      <p class="lead text-center"> {{ roomTitle}} </p>
+  <section class="col-md-9">
+    <h2 class="text-center"> Messages </h2>
+    <p class="lead text-center"> {{ Main.currentRoom.name}} </p>
+    <div class="chat-window">
+      <div class="message-list">
+        <p ng-repeat="message in messages"> <strong> {{message.userName}}: </strong> {{message.content}} </p>
+      </div>
       <div>
-        <form>
+        <form class="col-md-8 col-md-offset-2 message-form">
           <div class = "input-group">
-            <input type = "text" class = "form-control" placeholder="Enter your message" ng-model="message.content">
+            <input type = "text" class = "form-control " placeholder="Enter your message" ng-model="message.content">
             <span class = "input-group-btn">
               <button class = "btn btn-default" type = "button" ng-click="Main.sendMessage(message)">
                 Send
@@ -34,10 +37,7 @@
           </div>
         </form>
       </div>
-      <div>
-        <p ng-repeat="message in messages"> <strong> {{message.userName}}: </strong> {{message.content}} </p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
 </div>
